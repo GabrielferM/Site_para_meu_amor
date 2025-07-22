@@ -1,0 +1,128 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-image: url('image/formas-ou-textura-de-fundo-geometrico-abstrato.jpg'); /* <--- ADICIONE ESTA LINHA */
+  background-size: cover; /* <--- ADICIONE ESTA LINHA */
+  background-position: center center; /* <--- ADICIONE ESTA LINHA */
+  background-repeat: no-repeat; /* <--- ADICIONE ESTA LINHA */
+  background-attachment: fixed; /* Opcional: faz a imagem de fundo permanecer fixa ao rolar */
+  color: #E0E0E0; /* Lighter text for contrast */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px;
+  min-height: 100vh;
+  text-align: center;
+}
+
+@font-face {
+  font-family: 'Fiddums';
+  src: url('Fiddums Family.ttf') format('truetype');
+}
+
+h1 {
+  font-size: 4rem;
+  color: #BE1E2D; /* Deep red for gothic feel */
+  margin-bottom: 10px;
+  font-family: 'Fiddums', serif;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Adds depth */
+}
+
+.heart {
+  font-size: 3rem;
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); color: #8A0F1F; } /* Darker red */
+  50% { transform: scale(1.2); color: #BE1E2D; } /* Deep red */
+  100% { transform: scale(1); color: #8A0F1F; } /* Darker red */
+}
+
+.message {
+  margin: 20px 0;
+  font-size: 1.2rem;
+  font-family: serif;
+  max-width: 500px;
+  color: #C0C0C0; /* Slightly lighter than body text */
+}
+
+.message1 {
+  margin: 20px auto; /* Adicione 'auto' para centralizar horizontalmente */
+  font-size: 1.2rem;
+  max-width: 500px;
+  color: #E0E0E0; /* Cor do texto para contraste */
+  background-color: rgba(26, 26, 26, 0.7); /* Fundo semi-transparente para o "quadrado" */
+  padding: 20px; /* Espaçamento interno */
+  border: 1px solid #BE1E2D; /* Borda vermelha escura */
+  border-radius: 15px; /* <--- ADICIONE OU MODIFIQUE ESTA LINHA: Para as pontas arredondadas */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Sombra suave */
+  line-height: 1.6; /* Melhora a legibilidade */
+}
+
+button {
+  background-color: #2F022F; /* Dark purple */
+  color: white;
+  padding: 12px 20px;
+  border: 1px solid #BE1E2D; /* Red border */
+  border-radius: 5px; /* More angular than round */
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Subtle shadow */
+}
+
+button:hover {
+  background-color: #BE1E2D; /* Red on hover */
+  border-color: #2F022F; /* Dark purple border on hover */
+}
+
+.surprise {
+  display: none;
+  margin-top: 20px;
+  font-size: 1.1rem;
+  background: #1A1A1A; /* Darker background for surprise */
+  color: #E0E0E0; /* Lighter text */
+  padding: 15px;
+  border-radius: 5px; /* More angular */
+  box-shadow: 0 0 15px rgba(0,0,0,0.5); /* Stronger shadow */
+  border: 1px solid #8A0F1F; /* Dark red border */
+}
+
+footer {
+  position: absolute;
+  bottom: 10px;
+  font-size: 0.8rem;
+  color: #707070; /* Darker grey */
+}
+
+/* Estilos para o Slideshow */
+.slideshow-container {
+  max-width: 600px; /* Ajuste a largura máxima conforme necessário */
+  height: 400px; /* <--- ADICIONE OU MODIFIQUE ESTA LINHA: Altura fixa para o contêiner */
+  position: relative;
+  margin: auto;
+  margin-top: 20px; /* Espaçamento acima do slideshow */
+  margin-bottom: 30px; /* Espaçamento abaixo do slideshow */
+  border: 1px solid #8A0F1F; /* Borda escura para combinar com o tema gótico */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  overflow: hidden; /* Garante que a imagem não transborde a borda */
+}
+
+.mySlides {
+  display: none; /* Esconde todas as imagens por padrão */
+  width: 100%; /* Garante que a imagem preencha o contêiner */
+  height: 100%; /* <--- ADICIONE OU MODIFIQUE ESTA LINHA: Imagem preenche a altura fixa */
+  object-fit: cover; /* <--- ADICIONE ESTA LINHA: Garante que a imagem cubra o espaço sem distorcer, cortando o excesso */
+}
+
+/* Animação de Fade */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
