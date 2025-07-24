@@ -3,27 +3,37 @@ function mostrarSurpresa() {
   div.style.display = "block";
 }
 
-// Lógica do Slideshow
+// Slideshow automático
 let slideIndex = 0;
-showSlides(); // Chama a função pela primeira vez para iniciar o slideshow
+showSlides();
 
 function showSlides() {
-  let i;
   let slides = document.getElementsByClassName("mySlides");
-
-  // Esconde todas as imagens
-  for (i = 0; i < slides.length; i++) {
+  for (let i = 0; i < slides.length; i++) {
     slides[i].style.display = "none";
   }
-
-  // Avança para a próxima imagem
   slideIndex++;
-  // Se for a última imagem, volta para a primeira
-  if (slideIndex > slides.length) {slideIndex = 1}
-
-  // Exibe a imagem atual
-  slides[slideIndex-1].style.display = "block";
-
-  // Chama a função novamente após 4 segundos (4000 milissegundos)
+  if (slideIndex > slides.length) { slideIndex = 1 }
+  slides[slideIndex - 1].style.display = "block";
   setTimeout(showSlides, 4000);
 }
+
+function atualizarContador() {
+  const inicio = new Date("2025-06-21T20:30:00"); // <-- Data de início do namoro
+  const agora = new Date();
+
+  const diff = agora - inicio;
+
+  const segundosTotais = Math.floor(diff / 1000);
+  const minutos = Math.floor(segundosTotais / 60) % 60;
+  const horas = Math.floor(segundosTotais / 3600) % 24;
+  const dias = Math.floor(segundosTotais / (3600 * 24)) % 30;
+  const meses = Math.floor(segundosTotais / (3600 * 24 * 30));
+
+  const contador = document.getElementById("contador");
+  contador.textContent =
+    `Estamos juntos há ${meses} mês(es), ${dias} dia(s), ${horas} hora(s), ${minutos} minuto(s) e ${segundosTotais % 60} segundo(s).`;
+}
+
+// Atualiza a cada segundo
+setInterval(atualizarContador, 1000);
