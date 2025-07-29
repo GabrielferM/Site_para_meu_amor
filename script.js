@@ -5,18 +5,46 @@ function mostrarSurpresa() {
 
 // Slideshow automático
 let slideIndex = 0;
+let slides = document.getElementsByClassName("mySlides");
 showSlides();
 
-function showSlides() {
-  let slides = document.getElementsByClassName("mySlides");
+// Navegação manual por setas
+function mudarSlide(n) {
+  showSlide(slideIndex + n);
+}
+
+// Mostrar slide específico
+function showSlide(n) {
+  slideIndex = (n + slides.length) % slides.length;
   for (let i = 0; i < slides.length; i++) {
     slides[i].style.display = "none";
   }
-  slideIndex++;
-  if (slideIndex > slides.length) { slideIndex = 1 }
-  slides[slideIndex - 1].style.display = "block";
-  setTimeout(showSlides, 4000);
+  slides[slideIndex].style.display = "block";
 }
+
+// Slideshow automático
+function showSlides() {
+  showSlide(slideIndex);
+  slideIndex++;
+  setTimeout(showSlides, 4000); // Troca a cada 4 segundos
+}
+
+let startX = 0;
+
+const slideshowContainer = document.getElementById("slideshow");
+
+slideshowContainer.addEventListener("touchstart", (e) => {
+  startX = e.touches[0].clientX;
+});
+
+slideshowContainer.addEventListener("touchend", (e) => {
+  let endX = e.changedTouches[0].clientX;
+  if (startX - endX > 50) {
+    mudarSlide(1); // Swipe para esquerda → próximo
+  } else if (endX - startX > 50) {
+    mudarSlide(-1); // Swipe para direita → anterior
+  }
+});
 
 function atualizarContador() {
   const inicio = new Date("2025-06-21T20:30:00"); // <-- Data de início do namoro

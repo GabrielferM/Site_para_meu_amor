@@ -14,10 +14,13 @@
     Eu não sei desenhar e nem tenho uma letra bonita... mas sei montar um site.
   </p>
 
+  <div class="spotify-player">
+    <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/track/2JAiwcWRLIRI4uiroJ86U7?utm_source=generator" width="100%" height="100" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+  </div>
 
   <p id="contador" class="contador-amor"></p>
 
-  <div class="slideshow-container">
+  <div class="slideshow-container" id="slideshow">
     <img class="mySlides fade" src="image/sonho.jpg" alt="Foto 1">
     <img class="mySlides fade" src="image/sonho1.jpg" alt="Foto 2">
     <img class="mySlides fade" src="image/sonho2jpg.jpg" alt="Foto 3">
@@ -27,6 +30,11 @@
     <img class="mySlides fade" src="image/sonho6.jpg" alt="Foto 7">
     <img class="mySlides fade" src="image/sonho07.jpg" alt="Foto 8">
     <img class="mySlides fade" src="image/sonho08.jpg" alt="Foto 9">
+    <img class="mySlides fade" src="image/sonho09.png" alt="Foto 10">
+    <img class="mySlides fade" src="image/sonho10.png" alt="Foto 11">
+
+    <a class="prev" onclick="mudarSlide(-1)">&#10094;</a>
+    <a class="next" onclick="mudarSlide(1)">&#10095;</a>
   </div>
 
   <p class="message">
@@ -36,6 +44,7 @@
   </p>
 
   <p class="message1">
+
     Meu bem... eu te amo, sei que já disse isso milhares de vezes, mas não há como eu expressar de outra forma. Eu tenho um carinho, 
     uma saudade, uma segurança e uma felicidade por ter você em minha vida, que me deixa anestesiado toda vez em que eu te vejo, 
     toda vez que eu converso com você e toda vez em que te beijo...
@@ -60,22 +69,12 @@
   </p>
 
 
-  <button onclick="mostrarSurpresa()">Revelar o segredo </button>
+  <button onclick="mostrarSurpresa()"> Revelar um segredo </button>
 
   <div class="surprise" id="surpresa">
     <!-- CONTEÚDO SURPRESA AQUI -->
     O segredo? Não tem nenhum segredo! Eu simplesmente estou perdidamente apaixonado por você!!!
   </div>
-
-  <!-- MÚSICA DE FUNDO (substitua o VIDEO_ID) -->
-<iframe
-  width="0"
-  height="0"
-  style="position: absolute; top: -1000px; left: -1000px;"
-  src="https://www.youtube.com/embed/--DC-3iXMBQ?autoplay=1&mute=1&loop=1&playlist=--DC-3iXMBQ"
-  frameborder="0"
-  allow="autoplay"
-></iframe>
 
   <footer>
     Feito com um grande amor

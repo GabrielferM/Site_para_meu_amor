@@ -131,3 +131,36 @@ footer {
   font-style: serif;
 }
 
+.spotify-player {
+  max-width: 400px;
+  margin: 30px auto;
+}
+
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 24px;
+  transition: 0.3s ease;
+  user-select: none;
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+}
+
+.next {
+  right: 10px;
+}
+
+.prev {
+  left: 10px;
+}
+
+.prev:hover, .next:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
